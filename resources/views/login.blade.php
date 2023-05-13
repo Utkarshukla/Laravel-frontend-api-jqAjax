@@ -1,4 +1,17 @@
 @include('header')
+    <script>
+        var token = localStorage.getItem('user_token');
+        if (window.location.pathname == '/login' || window.location.pathname == '/register') {
+            if (token !=null) {
+                window.open('/profile','_self');
+            }
+        } else {
+            if (token ==null) {
+                window.open('/login','_self');
+            }
+        }
+    </script>
+    
 <style>
     span {
         color: red;
@@ -17,6 +30,8 @@
         <br><br>
         <input type="submit" value="Login">
     </form>
+    <br>
+    <a href="/forget-password">Forget Password</a>
     <br>
     <p class="result"></p>
     <script>

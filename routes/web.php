@@ -22,3 +22,6 @@ Route::get('/login', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
+Route::get('/forget-password', function () {
+    return view('forget-password');
+});
